@@ -1,12 +1,22 @@
 Package: epifeatures
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Epidemiological characteristics of the dengue time series
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(person(given = "Felipe Antonio",
+                        family = "Dzul Manzanilla",
+                        role = c("aut", "cre"),
+                        email = "felipe.dzul.m@gmail.com",
+                        comment = c(ORCID = "https://orcid.org/0000-0002-2085-9141")),
+                 person(given = "Fabian",
+                        family = "Correa-Morales",
+                        role = c("ctb"),
+                        email = "fabiancorrea@msn.com",
+                        comment = c(ORCID = "https://orcid.org/0000-0002-6193-1242")))
+Maintainer: The package maintainer <felipe.dzul.m@gmail.com>
+Description: extracts epi-features from dengue datasets.
+License: MIT + file LICENSE
+URL: https://github.com/fdzul/epifeatures, https://fdzul.github.io/features
+BugReports: https://github.com/fdzul/features/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.1
