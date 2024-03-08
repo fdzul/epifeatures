@@ -2,7 +2,7 @@
 % Please edit documentation in R/ef_woc.R
 \name{ef_woc}
 \alias{ef_woc}
-\title{Epidemiological characteristics without cases}
+\title{ef_woc}
 \usage{
 ef_woc(x, dc_threshold, c_weeks, ef)
 }
@@ -25,7 +25,7 @@ Epidemiological characteristics without cases
 The function and arguments were based on the work of Almeida et al. (2022) for a more detailed review. Almeida IF, Lana RM, Codeco CT. 2022. How heterogeneous is the dengue transmission profile in Brazil? A study in six Brazilian states. PLO Neglected Tropical Diseases.
 }
 \examples{
-cf_freq(x = c(2, 0, 0, 0, 3, 5, 0, 0, 0, 0,2), dc_threshold = 0, c_weeks = 3, ef = "ds3")
+ef_woc(x = c(2, 0, 0, 0, 3, 5, 0, 0, 0, 0,2), dc_threshold = 0, c_weeks = 3, ef = "ds3")
 }
 \author{
 Felipe Antonio Dzul Manzanilla \email{felipe.dzul.m@gmail.com}
