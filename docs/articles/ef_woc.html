@@ -91,11 +91,137 @@ Cases</h1>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fdzul/epifeatures" class="external-link">epifeatures</a></span><span class="op">)</span></span></code></pre></div>
+<p><a href="https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0010746" class="external-link">Almeida
+et al 2023 (Table 1)</a> provide the epidemiological characteristics
+without cases Dc3, Dc6, Dsmax, &amp; Dsmax.</p>
+<table style="width:100%;" class="table">
+<colgroup>
+<col width="18%">
+<col width="14%">
+<col width="16%">
+<col width="16%">
+<col width="16%">
+<col width="16%">
+</colgroup>
+<thead><tr class="header">
+<th>Epi-features</th>
+<th align="center">Abbreviation</th>
+<th align="center">Definition</th>
+<th align="center">Unit of measure</th>
+<th align="center">Serie</th>
+<th align="center">Value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Length of case-free period (transmission)</td>
+<td align="center">Ds3</td>
+<td align="center">Frequency of at least three consecutive weeks with no
+record of dengue cases during the epidemiological year. Unit of measure:
+dimensionless (count)</td>
+<td align="center">dimensionless (count)</td>
+<td align="center">[2,0,0,0,3,5,0,0,0,0,2]</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Ds6</td>
+<td align="center">Frequency of at least six consecutive weeks with no
+record of dengue cases during the epidemiological year.</td>
+<td align="center">dimensionless (count)</td>
+<td align="center">[3,0,0,0,0,0,0,3,5,0,0,0,2]</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="center">Dsmax</td>
+<td align="center">Maximum period of consecutive weeks within an
+epidemiological year with no record of dengue cases</td>
+<td align="center">week</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="center">Dsmed</td>
+<td align="center">Median length of a one-year epidemiological period
+with no record of dengue cases</td>
+<td align="center">week</td>
+<td align="center">NA</td>
+<td align="center">NA</td>
+</tr>
+</tbody>
+</table>
+<div class="section level2">
+<h2 id="ds3">Ds3<a class="anchor" aria-label="anchor" href="#ds3"></a>
+</h2>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"ds3"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"ds3"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"ds3"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="ds6">Ds6<a class="anchor" aria-label="anchor" href="#ds6"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">6</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"ds6"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">2</span>, <span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">6</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"ds6"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="dsmax">Dsmax<a class="anchor" aria-label="anchor" href="#dsmax"></a>
+</h2>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"dsmax"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">6</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"dsmax"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 6</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="dsmed">Dsmed<a class="anchor" aria-label="anchor" href="#dsmed"></a>
+</h2>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">epifeatures</span><span class="fu">::</span><span class="fu"><a href="../reference/ef_woc.html">ef_woc</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">5</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                    dc_threshold <span class="op">=</span> <span class="fl">0</span>, </span>
+<span>                    c_weeks <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                    ef <span class="op">=</span> <span class="st">"dsmed"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 3.5</span></span></code></pre></div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

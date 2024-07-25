@@ -12,3 +12,84 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(epifeatures)
 ```
+
+
+[Almeida et al 2023 (Table 1)](https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0010746) provide the epidemiological characteristics without cases Dc3, Dc6, Dsmax, & Dsmax.
+
+| Epi-features | Abbreviation | Definition | Unit of measure | Serie | Value |
+|---------|:-----:|:------:|:------:|:------:|:------:|
+| Length of case-free period (transmission)  | Ds3   | Frequency of at least three consecutive weeks with no record of dengue cases during the epidemiological year. Unit of measure: dimensionless (count) |dimensionless (count) |[2,0,0,0,3,5,0,0,0,0,2]  |   2 |
+|    | Ds6  | Frequency of at least six consecutive weeks with no record of dengue cases during the epidemiological year. |  dimensionless (count)   | [3,0,0,0,0,0,0,3,5,0,0,0,2] |  1 |
+|    | Dsmax  | Maximum period of consecutive weeks within an epidemiological year with no record of dengue cases |  week  | NA |  NA |
+|    | Dsmed  | Median length of a one-year epidemiological period with no record of dengue cases | week  | NA |  NA |
+
+
+## Ds3 
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0, 3, 5, 0, 0, 0, 0,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 3, 
+                    ef = "ds3")
+```
+
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0, 3, 5,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 3, 
+                    ef = "ds3")
+```
+
+
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0, 0, 0,0, 1), 
+                    dc_threshold = 0, 
+                    c_weeks = 3, 
+                    ef = "ds3")
+```
+
+
+
+
+## Ds6 
+```{r}
+epifeatures::ef_woc(x = c(3,0,0,0,0,0,0,3,5,0,0,0,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 6, 
+                    ef = "ds6")
+```
+
+
+```{r}
+epifeatures::ef_woc(x = c(3,0,0,0,0,0,0,3,5,0,0,0,2, 0,0,0,0,0,0), 
+                    dc_threshold = 0, 
+                    c_weeks = 6, 
+                    ef = "ds6")
+```
+
+
+## Dsmax
+
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0, 3, 5, 0, 0, 0, 0,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 3, 
+                    ef = "dsmax")
+```
+
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0,0,0,0, 3, 5, 0, 0, 0, 0,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 6, 
+                    ef = "dsmax")
+```
+
+## Dsmed
+```{r}
+epifeatures::ef_woc(x = c(2, 0, 0, 0, 3, 5, 0, 0, 0, 0,2), 
+                    dc_threshold = 0, 
+                    c_weeks = 3, 
+                    ef = "dsmed")
+```
+
+
+
