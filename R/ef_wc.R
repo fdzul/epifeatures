@@ -25,7 +25,7 @@ ef_wc <- function(x, dc_threshold, c_weeks, ef){
 
         # Find consecutive periods with five or more cases
         current_length <- 0
-        for (cases in dengue_cases) {
+        for (cases in x) {
 
             if (cases >= dc_threshold) {
                 current_length <- current_length + 1
@@ -56,7 +56,7 @@ ef_wc <- function(x, dc_threshold, c_weeks, ef){
 
         consecutive_lengths <- integer()  # Initialize vector to store lengths
         current_length <- 0
-        for (cases in dengue_cases) {
+        for (cases in x) {
             if (cases >= dc_threshold) {
                 current_length <- current_length + 1
             } else {
@@ -83,7 +83,7 @@ ef_wc <- function(x, dc_threshold, c_weeks, ef){
         current_consecutive_weeks <- 0
 
         # Loop through the data to find consecutive weeks with 5 or more cases
-        for (cases in dengue_cases) {
+        for (cases in x) {
             if (cases >= dc_threshold) {
                 current_consecutive_weeks <- current_consecutive_weeks + 1
                 if (current_consecutive_weeks > max_consecutive_weeks) {
