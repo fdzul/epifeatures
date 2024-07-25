@@ -1,0 +1,16 @@
+---
+title: "Epidemiological Characteristics With Cases"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(epifeatures)
+```
+
+# 

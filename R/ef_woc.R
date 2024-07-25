@@ -5,7 +5,7 @@
 #' @param x where denotes the numerical vector of the number of cases per unit time.
 #' @param dc_threshold where is the threshold for the number of cases.
 #' @param c_weeks is the consecutive week.
-#' @param ef is the epifeature. The options are ds3, ds6, dsmed and ppw.
+#' @param ef is the epifeature. The options are ds3, ds6,dsmax, & dsmed.
 #'
 #' @return This function returns a vector numeric.
 #' @export

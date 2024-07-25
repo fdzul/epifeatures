@@ -13,7 +13,7 @@ ef_woc(x, dc_threshold, c_weeks, ef)
 
 \item{c_weeks}{is the consecutive week.}
 
-\item{ef}{is the epifeature. The options are ds3, ds6, dsmed and ppw.}
+\item{ef}{is the epifeature. The options are ds3, ds6,dsmax, & dsmed.}
 }
 \value{
 This function returns a vector numeric.
