@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of epifeatures is to ...
+The objective of the epifueatures package is to provide the epidemiological characteristics of dengue transmission. The package is based on the work of Almeida et al. (2022). For a more detailed review, see Almeida IF, Lana RM, Codeco CT. 2022. How heterogeneous is the dengue transmission profile in Brazil? A study in six Brazilian states. PLOS Neglected Tropical Diseases.
 
 ## Installation
 
